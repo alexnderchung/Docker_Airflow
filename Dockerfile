@@ -25,7 +25,7 @@ COPY ./pip_requirements.txt /tmp/pip_requirements.txt
 #Updates the package lists for upgrades for packages that need upgrading, as well as new packages that have just come to the repositories.
 RUN apt-get update \
     #Install python3 and libffi
-    && apt-get -y install $(cat /tmp/apt_get_requirements.txt) \
+    && apt-get -y install --no-install-recommends $(cat /tmp/apt_get_requirements.txt) \
     #Add user airflow
     && useradd -ms /bin/bash -d ${AIRFLOW_HOME} airflow \
     #Install dependencies for airflow and dbs
