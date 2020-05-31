@@ -29,7 +29,7 @@ RUN apt-get update \
     #Add user airflow
     && useradd -ms /bin/bash -d ${AIRFLOW_HOME} airflow \
     #Install dependencies for airflow and dbs
-    && pip install -r /tmp/pip_requirements.txt \
+    && pip3 install -r /tmp/pip_requirements.txt \
     #Removes unused packages with its config files and its dependencies with auto-yes and being run quietly in the packground (quiet level 2)
     && apt-get purge --auto-remove -yqq \
     #Removes packaes that have been installed as dependencies and are no longer used and removes them with auto-yes and (quiet level 2)

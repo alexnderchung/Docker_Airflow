@@ -1,4 +1,5 @@
 sudo
+build-essential
 g++
 gcc
 python3
