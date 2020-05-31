@@ -1,5 +1,5 @@
 sudo
-gcc-c++
+g++
 gcc
 python3
 python3-pip
