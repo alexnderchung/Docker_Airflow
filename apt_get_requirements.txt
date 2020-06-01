@@ -8,4 +8,6 @@ apt-utils
 python3-dev
 libffi-dev
 libpq-dev
-postgresql-server-dev-12
+postgresql
+python-psycopg2
+postgresql-server-dev-10
