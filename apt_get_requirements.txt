@@ -1,5 +1,6 @@
 sudo
 build-essential
+python3-setuptools
 g++
 gcc
 python3
