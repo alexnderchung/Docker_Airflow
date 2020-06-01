@@ -7,4 +7,3 @@ apache-airflow[celery,postgres,mysql]==1.10.6
 celery[redis]==4.3.0
 psycopg2
 requests
-setuptools

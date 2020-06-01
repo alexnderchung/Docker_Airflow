@@ -7,3 +7,5 @@ python3-pip
 apt-utils
 python3-dev
 libffi-dev
+libpq-dev
+postgresql-server-dev-12
