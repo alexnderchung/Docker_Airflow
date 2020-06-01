@@ -3,6 +3,8 @@ LABEL maintainer="Alex"
 
 #Set environment variable AIRFLOW_HOME
 ENV AIRFLOW_HOME /usr/local/airflow
+#Dont prompt choices when configuring/installing packages (i.e. tzdata on ubuntu asks for geo data)
+ENV DEBIAN_FRONTEND noninteractive
 
 # Folder Structure:
 # Airflow
@@ -24,7 +26,7 @@ COPY ./pip_requirements.txt /tmp/pip_requirements.txt
 
 #Updates the package lists for upgrades for packages that need upgrading, as well as new packages that have just come to the repositories.
 RUN apt-get update \
-    #Install python3 and libffi
+    #Install requirements (Python, postgres, etc) using apt-get install with auto yes and quiet level 2.  
     && apt-get -yqq install --no-install-recommends $(cat /tmp/apt_get_requirements.txt) \
     #Add user airflow
     && useradd -ms /bin/bash -d ${AIRFLOW_HOME} airflow \
