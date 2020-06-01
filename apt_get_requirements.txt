@@ -5,6 +5,7 @@ g++
 gcc
 python3
 python3-pip
+python3-wheel
 apt-utils
 libffi-dev
 libpq-dev

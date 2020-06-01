@@ -1,4 +1,3 @@
-wheel
 Cython
 pytz==2015.7
 pyOpenSSL
