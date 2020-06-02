@@ -10,4 +10,5 @@ CMD="airflow"
 $CMD initdb
 
 #Replace current shell and run 'airflow webserver'
-exec $CMD "$@"
+#exec $CMD "$@"
+exec $CMD webserver
