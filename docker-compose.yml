@@ -13,6 +13,22 @@ services:
         command: webserver
         networks:
             - airflow-network
+    mysql:
+        container_name: metadata_db
+        image: mysql:8.0
+        command: --default-authentication-plugin=mysql_native_password
+        restart: always
+        environment:
+            MYSQL_ROOT_PASSWORD: airflow_root_password
+            MYSQL_DATABASE: airflow_metadata_db
+            MYSQL_USER: airflow_user
+            MYSQL_PASSWORD: airflow_password
+        ports:
+            - "3306:3306"
+        networks:
+            - airflow-network
+
+
 
 networks:
     airflow-network:
