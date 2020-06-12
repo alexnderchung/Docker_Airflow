@@ -6,4 +6,3 @@ pyasn1
 apache-airflow[celery,postgres,aws,mysql]
 celery[redis]==4.3.0
 requests
-pymysql
