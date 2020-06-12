@@ -14,3 +14,4 @@ postgresql
 python3-psycopg2
 postgresql-server-dev-10
 libmysqlclient-dev
+mysql-server
