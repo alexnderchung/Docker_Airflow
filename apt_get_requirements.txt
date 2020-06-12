@@ -16,4 +16,3 @@ postgresql-server-dev-10
 libmysqlclient-dev
 mysql-server
 mysql-client
-python3-pymysql
