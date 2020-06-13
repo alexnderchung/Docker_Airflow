@@ -3,6 +3,7 @@ version: '3'
 services:
     airflow:
         container_name: webserver
+        restart: always
         build: .
         privileged: true
         ports: 
@@ -14,10 +15,12 @@ services:
         networks:
             - airflow-network
     mysql:
-        container_name: metadata_db
+        container_name: mysql
+        restart: always
         image: mysql:8.0
         command: --default-authentication-plugin=mysql_native_password
-        restart: always
+        depends_on:
+            - postgres       
         environment:
             MYSQL_ROOT_PASSWORD: airflow_root_password
             MYSQL_DATABASE: airflow_metadata_db
