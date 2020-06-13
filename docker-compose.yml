@@ -6,6 +6,8 @@ services:
         restart: always
         build: .
         privileged: true
+        depends_on:
+            - mysql       
         ports: 
             - "8080:8080"
             - "8793:8793"
@@ -19,8 +21,6 @@ services:
         restart: always
         image: mysql:8.0
         command: --default-authentication-plugin=mysql_native_password
-        depends_on:
-            - postgres       
         environment:
             MYSQL_ROOT_PASSWORD: airflow_root_password
             MYSQL_DATABASE: airflow_metadata_db
