@@ -1,21 +1,6 @@
 version: '3'
 
 services:
-    airflow:
-        container_name: webserver
-        restart: always
-        build: .
-        privileged: true
-        depends_on:
-            - mysql       
-        ports: 
-            - "8080:8080"
-            - "8793:8793"
-        volumes: 
-            - /var/airflow/logs
-        command: webserver
-        networks:
-            - airflow-network
     mysql:
         container_name: mysql
         restart: always
@@ -31,7 +16,38 @@ services:
         networks:
             - airflow-network
 
+    airflow:
+        container_name: webserver
+        restart: always
+        build: .
+        privileged: true
+        depends_on:
+            - mysql       
+        ports: 
+            - "8080:8080"
+            - "8793:8793"
+        volumes: 
+            - /var/airflow/logs
+        command: webserver
+        networks:
+            - airflow-network
 
+    scheduler:
+        container_name: scheduler
+        restart: always
+        build: .
+        command: scheduler
+        networks:
+            - airflow-network
+
+    worker:
+        container_name: worker
+        restart: always
+        build: .
+        privileged: true
+        command: worker
+        networks:
+            - airflow-network
 
 networks:
     airflow-network:
