@@ -7,10 +7,11 @@ AIRFLOW_HOME="/usr/local/airflow"
 CMD="airflow"
 
 #Run 'airflow initdb'
+sleep 30
 $CMD initdb
-sleep 10
+sleep 30
 $CMD scheduler
-sleep 10
+sleep 30
 
 #Replace current shell and run 'airflow webserver'
 #exec $CMD "$@"
