@@ -8,9 +8,10 @@ CMD="airflow"
 
 #Run 'airflow initdb'
 $CMD initdb
+sleep 10
+$CMD scheduler
+sleep 10
 
 #Replace current shell and run 'airflow webserver'
 #exec $CMD "$@"
 exec $CMD webserver -p 8080
-exec $CMD scheduler
-exec $CMD worker
