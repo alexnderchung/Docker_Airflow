@@ -12,7 +12,6 @@ $CMD initdb
 sleep 30
 $CMD scheduler
 sleep 30
-
+$CMD webserver
 #Replace current shell and run 'airflow webserver'
 #exec $CMD "$@"
-exec $CMD webserver -p 8080
