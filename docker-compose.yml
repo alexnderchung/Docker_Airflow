@@ -22,7 +22,10 @@ services:
         build: .
         privileged: true
         depends_on:
-            - mysql       
+            - mysql    
+        volumes: 
+            - ./dags:/usr/local/airflow/dags
+            - ./data:/tmp/work   
         ports: 
             - "8080:8080"
             - "8793:8793"
