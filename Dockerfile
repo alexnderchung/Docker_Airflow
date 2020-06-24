@@ -2,7 +2,8 @@ FROM ubuntu:18.04
 LABEL maintainer="Alex"
 
 #Set environment variable AIRFLOW_HOME
-ENV AIRFLOW_HOME /usr/local/airflow
+ARG AIRFLOW_USER_HOME=/usr/local/airflow
+ENV AIRFLOW_HOME=${AIRFLOW_USER_HOME}
 #Dont prompt choices when configuring/installing packages (i.e. tzdata on ubuntu asks for geo data)
 ENV DEBIAN_FRONTEND noninteractive
 
