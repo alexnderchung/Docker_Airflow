@@ -29,8 +29,6 @@ services:
         ports: 
             - "8080:8080"
             - "8793:8793"
-        volumes: 
-            - /var/airflow/logs
         command: webserver
         networks:
             - airflow-network
