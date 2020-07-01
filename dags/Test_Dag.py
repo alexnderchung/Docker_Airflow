@@ -42,7 +42,7 @@ def pull_AAN_data():
 # dag
 args = {"owner": "Scrape test", "start_date": airflow.utils.dates.days_ago(2)}
 
-dag = DAG(dag_id="first_exercise", default_args=args, schedule_interval=None)
+dag = DAG(dag_id="scrape_test", default_args=args, schedule_interval=None)
 
 
 # tasks
