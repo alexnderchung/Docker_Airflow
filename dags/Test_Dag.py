@@ -24,7 +24,7 @@ def pull_BAC_data():
     right = web.DataReader('AAN','yahoo').reset_index()
     data = pd.merge(left = left, right = right, how = 'outer', on = 'Date', suffixes = ('Prior','Current')).dropna()
     transformed_data = pd.concat([data, data.loc[:,data.columns.difference(['Date','VolumePrior','VolumeCurrent'])].div(data.OpenCurrent, axis = 0).round(decimals = 3).add_suffix('Percent')], axis = 1)
-    transformed_data.to_csv(f'~/Documents/{symbol}.csv')
+    transformed_data.to_csv(f'/tmp/work /{symbol}.csv')
     print("Data Retrieved!")
 
 
@@ -35,7 +35,7 @@ def pull_AAN_data():
     right = web.DataReader('AAN','yahoo').reset_index()
     data = pd.merge(left = left, right = right, how = 'outer', on = 'Date', suffixes = ('Prior','Current')).dropna()
     transformed_data = pd.concat([data, data.loc[:,data.columns.difference(['Date','VolumePrior','VolumeCurrent'])].div(data.OpenCurrent, axis = 0).round(decimals = 3).add_suffix('Percent')], axis = 1)
-    transformed_data.to_csv(f'~/Documents/{symbol}.csv')
+    transformed_data.to_csv(f'/tmp/work /{symbol}.csv')
     print("Data Retrieved!")
     
     
